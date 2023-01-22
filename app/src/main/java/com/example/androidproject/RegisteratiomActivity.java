@@ -9,14 +9,15 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisteratiomActivity extends AppCompatActivity {
+    EditText Name;
+    EditText password;
+    EditText phone;
+    Button register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registeration);
-        EditText Name;
-        EditText password;
-        EditText phone;
-        Button register;
+
 
         Name = findViewById(R.id.first);
 
@@ -42,6 +43,23 @@ public class RegisteratiomActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("name", Name.getText().toString());
+        outState.putString("password", password.getText().toString());
+        outState.putString("phone", phone.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Name.setText(savedInstanceState.getString("name"));
+        password.setText(savedInstanceState.getString("password"));
+        phone.setText(savedInstanceState.getString("phone"));
+    }
+
+
     boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();
         return TextUtils.isEmpty(str);

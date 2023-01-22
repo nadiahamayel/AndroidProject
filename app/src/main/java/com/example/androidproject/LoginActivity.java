@@ -39,6 +39,24 @@ public class LoginActivity extends AppCompatActivity {
             setUpSharedPerf ();
         }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("username", username.getText().toString());
+        outState.putString("password", password.getText().toString());
+        outState.putBoolean("save", save);
+        outState.putBoolean("flag", flag);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        username.setText(savedInstanceState.getString("username"));
+        password.setText(savedInstanceState.getString("password"));
+        save = savedInstanceState.getBoolean("save");
+        flag = savedInstanceState.getBoolean("flag");
+    }
+
     private void setupUI() {
         username = findViewById(R.id.username);
         password = findViewById(R.id.pass);
