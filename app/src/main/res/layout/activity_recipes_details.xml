@@ -23,6 +23,7 @@
         style="@style/TextAppearance.AppCompat.Title"
         />
 
+
     <TextView
         android:id="@+id/txtRecipeDetails"
         android:layout_below="@id/txtRecipeName"

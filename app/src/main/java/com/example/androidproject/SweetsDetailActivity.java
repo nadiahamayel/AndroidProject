@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class SweetsDetailActivity extends AppCompatActivity {
 
+    private ArrayList<String> favoritesList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +30,9 @@ public class SweetsDetailActivity extends AppCompatActivity {
         TextView txtTime= findViewById(R.id.sweetTime);
         TextView txtDesc= findViewById(R.id.sweetDesc);
 
+
         txtName.setText(sweetDet.getSweet_name());
         txtDesc.setText(sweetDet.getSweet_description());
+
     }
 }
