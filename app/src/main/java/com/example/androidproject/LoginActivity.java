@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     @Override
+    ///orintation
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("username", username.getText().toString());
@@ -49,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
+    ///orintation
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         username.setText(savedInstanceState.getString("username"));

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegisteratiomActivity extends AppCompatActivity {
     EditText Name;
     EditText password;
-    EditText phone;
+
     Button register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,6 @@ public class RegisteratiomActivity extends AppCompatActivity {
         Name = findViewById(R.id.first);
 
         password = findViewById(R.id.password);
-        phone = findViewById(R.id.phone);
         register = findViewById(R.id.registration);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +47,7 @@ public class RegisteratiomActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putString("name", Name.getText().toString());
         outState.putString("password", password.getText().toString());
-        outState.putString("phone", phone.getText().toString());
+
     }
 
     @Override
@@ -56,7 +55,7 @@ public class RegisteratiomActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         Name.setText(savedInstanceState.getString("name"));
         password.setText(savedInstanceState.getString("password"));
-        phone.setText(savedInstanceState.getString("phone"));
+
     }
 
 

@@ -38,6 +38,9 @@ public class DrinkDetail extends AppCompatActivity {
         //txtTime.setText(drink.getTime()); TextView just access String , in this case time is integer .
         Button myfavorite = findViewById(R.id.myfavorite);
         myfavorite.setOnClickListener(new View.OnClickListener() {
+
+
+            // oraib -> add to favorite activity
             @Override
             public void onClick(View view) {
                 //ArrayList<String> favorites = new ArrayList<String>();
